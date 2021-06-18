@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Editar</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+</head>
+
+<body>
+    <p th:text="Editar"></p>
+    <div class="container">
+        <div style="color: blue;">
+            <h3>Editar productos</h3>
+        </div>
+        <form th:action="@{/producto/save}" method="POST">
+            <input type="hidden" name="id" th:value="${producto.id}">
+            <div class="mb-3">
+                <label for="formGroupExampleInput" class="form-label">Nombre Producto</label>
+                <input type="text" class="form-control" id="formGroupExampleInput" name="nombre" th:value="${producto.nombre}">
+            </div>
+            <div class="mb-3">
+                <label for="formGroupExampleInput2" class="form-label">Descripción de Producto</label>
+                <input type="text" class="form-control" id="formGroupExampleInput2" name="descripcion" th:value="${producto.descripcion}">
+            </div>
+            <div class="mb-3">
+                <label for="formGroupExampleInput3" class="form-label">Precio de Producto</label>
+                <input type="text" class="form-control" id="formGroupExampleInput3" name="precio" th:value="${producto.precio}">
+            </div>
+            <button class="btn btn-warning" type="submit">Actulizar</button>
+        </form>
+    </div>
+</body>
+
+</html>

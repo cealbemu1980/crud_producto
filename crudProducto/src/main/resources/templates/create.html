@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Crear</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+</head>
+
+<body>
+    <p th:text="Crear"></p>
+    <div class="container">
+        <div style="color: blue;">
+            <h3>Crear productos</h3>
+        </div>
+        <form th:action="@{/producto/save}" method="POST">
+            <div class="mb-3">
+                <label for="formGroupExampleInput" class="form-label">Nombre Producto</label>
+                <input type="text" class="form-control" id="formGroupExampleInput" name="nombre" placeholder="Escriba el nombre del producto">
+            </div>
+            <div class="mb-3">
+                <label for="formGroupExampleInput2" class="form-label">Descripción de Producto</label>
+                <input type="text" class="form-control" id="formGroupExampleInput2" name="descripcion" placeholder="Escriba la descripción del producto">
+            </div>
+            <div class="mb-3">
+                <label for="formGroupExampleInput3" class="form-label">Precio de Producto</label>
+                <input type="text" class="form-control" id="formGroupExampleInput3" name="precio" placeholder="Escriba el precio del producto">
+            </div>
+            <button class="btn btn-success" type="submit">Guardar</button>
+        </form>
+    </div>
+</body>
+
+</html>
